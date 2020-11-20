@@ -1,0 +1,10 @@
+.container-fluid {
+  height: calc(100vh - 56px);
+
+  > .row {
+    height: 100%;
+  }
+}
+.example-spacer {
+  flex: 1 1 auto;
+}

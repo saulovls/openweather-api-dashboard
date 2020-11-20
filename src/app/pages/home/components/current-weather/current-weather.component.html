@@ -1,0 +1,28 @@
+<div class="card z-depth-2">
+  <div class="card-content">
+
+    <h2>{{ cityName }}</h2>
+
+    <jv-detailed-weather [weather]="cityWeather.weather" [unit]="unit"></jv-detailed-weather>
+
+    <div class="card-actions">
+
+      <button style="margin-top: 20px" mat-raised-button (click)="onToggleBookmark()" color="primary">
+        {{ isFavorite ? 'Remover dos favoritos' : 'Adicionar aos favoritos' }}
+      </button>
+
+
+      <button style="margin-left: 10px" mat-raised-button color="accent" routerLink="/details"
+        [queryParams]="{ lat: cityWeather.city.coord.lat, lon: cityWeather.city.coord.lon }">
+        Ver detalhes
+      </button>
+    </div>
+
+    <!-- <div *ngIf="loading$ | async">
+      <div class="progress">
+        <div class="indeterminate"></div>
+      </div>
+    </div> -->
+
+  </div>
+</div>

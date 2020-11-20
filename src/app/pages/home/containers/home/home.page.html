@@ -1,0 +1,47 @@
+<div class="search-container">
+
+  <div class="form-group">
+
+    <mat-form-field class="example-full-width">
+      <mat-label (focus)="true">Digite o nome da cidade e aperte enter</mat-label>
+      <input autofocus (keydown.enter)="doSearch()" class="form-control" [formControl]="searchControl" matInput
+        placeholder="Ex. Recife">
+    </mat-form-field>
+
+    <div *ngIf="this.showContent === true">
+      <div class="center">
+        <div class="content">
+          <div class="planet">
+            <div class="ring"></div>
+            <div class="cover-ring"></div>
+            <div class="spots">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+
+            </div>
+          </div>
+          <p>WeatherAPI</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="loading$ | async">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+
+<div *ngIf="!(loading$ | async) && !(error$ | async) && !!cityWeather">
+  <jv-current-weather [cityWeather]="cityWeather" [isFavorite]="isCurrentFavorite$ | async" [unit]="unit$ | async"
+    (toggleBookmark)="onToggleBookmark()"></jv-current-weather>
+</div>
+
+<div *ngIf="!(loading$ | async) && error$ | async">
+  <a>Não foi possível encontrar a cidade que você digitou. Verifique o nome.</a>
+</div>

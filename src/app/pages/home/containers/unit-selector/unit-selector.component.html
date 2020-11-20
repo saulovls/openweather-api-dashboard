@@ -1,0 +1,6 @@
+<button color='accent' mat-raised-button [matMenuTriggerFor]="menu">{{currentUnit}}</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="updateUnit(unitsEnum.Metric)">Utilizar: Grau Celsius</button>
+  <button mat-menu-item (click)="updateUnit(unitsEnum.Imperial)">Utilizar: Grau Fahrenheit</button>
+  <button mat-menu-item (click)="updateUnit(unitsEnum.SI)">Utilizar: Kelvin</button>
+</mat-menu>

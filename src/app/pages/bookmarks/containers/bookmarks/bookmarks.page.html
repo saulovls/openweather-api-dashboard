@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="bookmarks-container">
+
+    <div>
+      <div class="card-title">
+        Favoritos
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <div *ngIf="!(bookmarks$ | async).length">Você ainda não adicionou favoritos</div>
+
+          <mat-selection-list #shoes [multiple]="false">
+            <mat-list-option *ngFor="let bookmark of bookmarks$ | async" [value]="bookmark">
+              <div class="inline">
+                <a class="left" [routerLink]="['../details']"
+                  [queryParams]="{lat: bookmark.coord.lat, lon: bookmark.coord.lon}">
+                  {{ bookmark.name }}
+                </a>
+                <button class="right" mat-icon-button color="primary" (click)="removeBookmark(bookmark.id)"
+                  aria-label="Example icon button with a home icon">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </mat-list-option>
+          </mat-selection-list>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

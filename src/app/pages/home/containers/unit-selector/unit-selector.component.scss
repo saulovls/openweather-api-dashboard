@@ -1,0 +1,15 @@
+div {
+  display: flex;
+  align-items: center;
+  color: white;
+
+  > span {
+    margin-right: 8px;
+  }
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 50px;
+}
