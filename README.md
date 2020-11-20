@@ -16,7 +16,7 @@
 
 2. Projeto original foi retirado do Bootcamp da everis, modifiquei 100% do layout e fiz umas implementações;
 
-3. [Clica aqui pra ver uma demo desse baita projeto que ficou lindão. 🎉](https://netflix-homepage.vercel.app/);
+3. [Clica aqui pra ver uma demo desse baita projeto que ficou lindão. 🎉](https://openweather-api-dashboard.vercel.app/);
 
    
 
