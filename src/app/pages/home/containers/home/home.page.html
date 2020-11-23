@@ -5,7 +5,7 @@
     <mat-form-field class="example-full-width">
       <mat-label (focus)="true">Digite o nome da cidade e aperte enter</mat-label>
       <input autofocus (keydown.enter)="doSearch()" class="form-control" [formControl]="searchControl" matInput
-        placeholder="Ex. Recife">
+        placeholder="Ex. São Paulo">
     </mat-form-field>
 
     <div *ngIf="this.showContent === true">
